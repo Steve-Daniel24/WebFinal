@@ -1,0 +1,174 @@
+- Page d'accueil (Frontoffice)
+Créer la page d'accueil (index.php) du frontoffice.
+    - Affichage
+        - Ajouter une barre de recherche visible sur la page.
+        - Afficher une liste des habitations disponibles.
+        - Implémenter des filtres pour trier les habitations par type, loyer, quartier, etc.
+        - Respecter les maquettes de la page d'accueil (couleurs, polices, disposition).
+    - Base
+        - Créer une fonction pour récupérer les habitations disponibles depuis la base de données.
+        - Configurer une table pour stocker les informations de recherche et les filtres.
+    - Fonction
+        - La barre de recherche doit être fonctionnelle, avec des filtres permettant de trier les habitations.
+        - Les résultats de la recherche doivent être dynamiquement mis à jour en fonction des critères sélectionnés.
+        - Implémenter une pagination pour afficher les habitations par lot de 10.
+    - Integration
+        - Intégrer la recherche avec les tables de la base de données (habitaciones, clients).
+        - Vérifier la bonne gestion des filtres pour chaque critère (type, loyer, quartier).
+
+- Page d'inscription (Frontoffice)
+Créer la page d'inscription pour les clients (formulaire d'inscription).
+    - Affichage
+        - Ajouter les champs : email, nom, mot de passe, numéro de téléphone.
+        - Ajouter des messages d'erreur pour chaque champ obligatoire manquant.
+        - Créer un bouton de soumission pour l'inscription.
+    - Base
+        - Créer une table clients dans la base de données avec les colonnes nécessaires : email, nom, mot de passe, numéro de téléphone.
+        - Ajouter une fonctionnalité pour valider l'email et la disponibilité du numéro de téléphone.
+    - Fonction
+        - Vérifier que tous les champs sont remplis avant de soumettre le formulaire.
+        - Vérifier la validité de l'email et du mot de passe (ex : mot de passe fort).
+        - Valider le numéro de téléphone et l'unicité de l'email.
+    - Integration
+        - Intégrer le formulaire d'inscription avec la base de données (clients).
+        - Vérifier que les données saisies sont correctement enregistrées dans la base de données.
+        - Ajouter des redirections après l'inscription réussie vers la page de connexion.
+
+- Page de login (Frontoffice et Backoffice)
+Créer la page de connexion pour les administrateurs et clients.
+    - Affichage
+        - Créer les champs email et mot de passe.
+        - Ajouter un bouton de connexion.
+        - Ajouter un lien vers la page d'inscription si l'utilisateur n'a pas de compte.
+    - Base
+        - Vérifier l'existence de l'email et du mot de passe dans la base de données.
+        - Créer un système de session pour les utilisateurs connectés.
+    - Fonction
+        - Vérifier que les champs email et mot de passe sont remplis avant de soumettre le formulaire.
+        - Vérifier que l'email et le mot de passe correspondent à un utilisateur enregistré.
+        - Créer une session pour l'utilisateur connecté.
+        - Ajouter un message d'erreur si la connexion échoue.
+        - Ajouter un lien pour récupérer le mot de passe en cas d'oubli.
+        - Rediriger l'utilisateur vers la page d'accueil après la connexion.
+    - Integration
+        - Intégrer l'authentification avec les tables clients (pour le frontoffice) et administrateurs (pour le backoffice).
+        - Ajouter une gestion de session pour maintenir l'utilisateur connecté.
+
+- Page de gestion des habitations (Backoffice)
+Créer la page de gestion des habitations (ajout, modification, suppression).
+    - Affichage
+        - Créer un tableau pour afficher les habitations existantes.
+        - Ajouter des boutons pour ajouter, modifier et supprimer une habitation.
+        - Afficher un message de confirmation après chaque modification ou suppression.
+    - Base
+        - Créer une table habitations pour stocker les informations nécessaires (type, nombre de chambres, loyer, description, photos, quartier).
+        - Ajouter une fonctionnalité pour uploader des photos.
+        - Implémenter des requêtes pour ajouter, modifier et supprimer des habitations.
+    - Fonction
+        - Implémenter des formulaires pour ajouter et modifier les habitations.
+        - Implémenter la suppression d'habitations via un bouton de suppression.
+    - Integration
+        - Intégrer la gestion des habitations avec la base de données pour refléter les modifications effectuées.
+        - Vérifier que les photos sont correctement uploadées et affichées sur la page.
+
+- Page des détails de l'habitation (Frontoffice)
+Créer la page des détails de l'habitation.
+    - Affichage
+        - Afficher toutes les informations détaillées de l'habitation : type, nombre de chambres, loyer, description, photos, quartier.
+        - Ajouter un formulaire de réservation avec un choix de date d'arrivée et de départ.
+    - Base
+        - Récupérer les informations de l'habitation sélectionnée depuis la base de données.
+    - Fonction
+        - Implémenter la vérification de la disponibilité de l'habitation pour les dates choisies.
+        - Afficher un message d'erreur si l'habitation est déjà réservée pour ces dates.
+    - Integration
+        - Intégrer les détails de l'habitation avec la base de données pour afficher les informations correctes.
+        - Intégrer la fonctionnalité de réservation avec la page de détails de l'habitation.
+
+- Page de réservation (Frontoffice)
+Créer la page de réservation avec un formulaire pour choisir les dates.
+    - Affichage
+        - Créer un formulaire avec des champs pour la date d'arrivée et la date de départ.
+        - Ajouter un calendrier pour sélectionner les dates.
+        - Afficher les habitations disponibles pour les dates choisies.
+        - Afficher un bouton de soumission pour la réservation.
+    - Base
+        - Créer une table réservations pour stocker les informations de réservation (id_habitation, id_client, date_arrivee, date_depart).
+        - Ajouter une fonctionnalité pour vérifier la disponibilité de l'habitation.
+        - Ajouter une fonctionnalité pour calculer le prix total de la réservation.
+        - Ajouter une fonctionnalité pour envoyer un email de confirmation de réservation.
+        - Ajouter un formulaire de réservation avec un choix de date d'arrivée et de départ.
+    - Fonction
+        - Implémenter la fonctionnalité de réservation en vérifiant la disponibilité de l'habitation.
+        - Calculer le prix total de la réservation en fonction des dates choisies.
+        - Afficher un message d'erreur si l'habitation est déjà réservée pour ces dates.
+    - Integration
+        - Intégrer la réservation avec la base de données pour enregistrer les réservations effectuées.
+        - Intégrer la fonctionnalité de réservation avec la table réservations.
+
+- Page de confirmation de réservation (Frontoffice)
+Créer la page de confirmation de réservation.
+    - Affichage
+        - Afficher un message de confirmation de la réservation avec les détails de l'habitation et les dates choisies.
+        - Afficher le prix total de la réservation.
+    - Base
+        - Récupérer les informations de la réservation depuis la base de données.
+    - Fonction
+        - Afficher un message de confirmation avec les informations de réservation.
+    - Integration
+        - Intégrer avec la base de données pour récupérer les informations de la réservation confirmée.
+
+- Page de profil utilisateur (Frontoffice)
+Créer la page de profil utilisateur (affichage et modification des informations personnelles).
+    - Affichage
+        - Afficher les informations personnelles de l'utilisateur (email, nom, numéro de téléphone).
+        - Ajouter des boutons pour modifier les informations et changer le mot de passe.
+    - Base
+        - Créer une table utilisateurs pour stocker les informations personnelles (email, nom, mot de passe, numéro de téléphone).
+        - Ajouter des fonctions pour récupérer et mettre à jour les informations de l'utilisateur.
+    - Fonction
+        - Implémenter la fonctionnalité de modification des informations personnelles.
+        - Vérifier que les champs sont correctement remplis avant de soumettre le formulaire.
+        - Vérifier la validité de l'email et du mot de passe (ex : mot de passe fort).
+    - Integration
+        - Assurer que les modifications sont bien enregistrées dans la base de données.
+        - Intégrer la page de profil avec les tables utilisateurs.
+
+- Page de gestion des réservations (Backoffice)
+Créer la page de gestion des réservations (affichage des réservations en cours, possibilité de gérer les réservations).
+    - Affichage
+        - Afficher une liste des réservations avec les informations clés : client, habitation, dates de réservation.
+        - Ajouter des options pour annuler une réservation ou modifier son statut.
+    - Base
+        - Créer une fonction pour récupérer toutes les réservations depuis la base de données.
+        - Implémenter une fonctionnalité permettant de mettre à jour le statut des réservations (confirmée, annulée, en attente).
+    - Fonction
+        - Permettre à l'administrateur d'annuler ou modifier une réservation.
+        - Ajouter un filtre pour rechercher des réservations par client, par date, ou par statut.
+    - Integration
+        - Vérifier que toutes les actions effectuées dans la gestion des réservations sont bien intégrées à la base de données.
+        - Mettre à jour l'interface en temps réel avec les changements effectués.
+
+- Page de déconnexion (Frontoffice et Backoffice)
+Créer la page de déconnexion pour permettre à l'utilisateur de se déconnecter.
+    - Affichage
+        - Ajouter un bouton de déconnexion dans la barre de navigation.
+        - Afficher un message de confirmation après la déconnexion.
+    - Base
+        - Créer une fonction pour détruire la session de l'utilisateur.
+    - Fonction
+        - Permettre à l'utilisateur de se déconnecter et le rediriger vers la page d'accueil.
+    - Integration
+        - Intégrer la fonctionnalité de déconnexion avec le système de gestion de sessions.
+
+- Page d'erreur 404
+Créer la page d'erreur 404 (page non trouvée).
+    - Affichage
+        - Afficher un message d'erreur clair indiquant que la page demandée n'existe pas.
+        - Ajouter un lien permettant à l'utilisateur de retourner à la page d'accueil ou à une page précédente.
+    - Base
+        - Aucune base de données nécessaire.
+    - Fonction
+        - Rediriger l'utilisateur vers la page d'accueil ou une page précédente après un certain délai.
+    - Integration
+        - Configurer la page pour qu'elle soit automatiquement affichée lorsque l'URL demandée n'est pas valide.
