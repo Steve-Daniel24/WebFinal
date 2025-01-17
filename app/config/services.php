@@ -5,6 +5,7 @@ use flight\database\PdoWrapper;
 use flight\debug\database\PdoQueryCapture;
 use Tracy\Debugger;
 use app\models\Users;
+use app\models\Habitations;
 
 /** 
  * @var array $config This comes from the returned array at the bottom of the config.php file
@@ -31,4 +32,8 @@ use app\models\Users;
 
 Flight::map('Users', function () {
     return new Users(Flight::db());
+});
+
+Flight::map('Habitations', function () {
+    return new Habitations(Flight::db());
 });

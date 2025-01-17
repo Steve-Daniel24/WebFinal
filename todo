@@ -35,7 +35,7 @@ Créer la page d'inscription pour les clients (formulaire d'inscription). =>(ok 
         - Ajouter des redirections après l'inscription réussie vers la page de connexion.
 
 - Page de login (Frontoffice et Backoffice)
-Créer la page de connexion pour les administrateurs et clients.
+Créer la page de connexion pour les administrateurs et clients. =>ok (finished)
     - Affichage
         - Créer les champs email et mot de passe.
         - Ajouter un bouton de connexion.
