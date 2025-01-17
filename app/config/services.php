@@ -6,6 +6,7 @@ use flight\debug\database\PdoQueryCapture;
 use Tracy\Debugger;
 use app\models\Users;
 use app\models\Habitations;
+use app\models\Reservation;
 
 /** 
  * @var array $config This comes from the returned array at the bottom of the config.php file
@@ -36,4 +37,7 @@ Flight::map('Users', function () {
 
 Flight::map('Habitations', function () {
     return new Habitations(Flight::db());
+});
+Flight::map('Reservation', function () {
+    return new Reservation(Flight::db());
 });
