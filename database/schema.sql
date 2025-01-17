@@ -1,0 +1,10 @@
+CREATE DATABASE immobilier;
+Use immobilier;
+
+CREATE TABLE User(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    mot_de_passe VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    tel VARCHAR(20) NOT NULL
+);

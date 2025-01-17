@@ -1,0 +1,77 @@
+project/
+├── public/                  # Publicly accessible directory (entry point)
+│   ├── assets/              # Pour gérer les fichiers statiques
+│   │   ├── css/
+│   │   │   ├── style.css
+│   │   ├── js/
+│   │   │   ├── app.js
+│   │   │   └── tasks.js
+│   │   ├── images/
+│   │   │   ├── example.png
+│   │   └── fonts/
+│   ├── index.php            # Main application entry point
+│   └── .htaccess            # Apache configuration for routing (if using Apache)
+├── database/                # Base de donnees
+│   ├── data.sql
+│   ├── schema.sql
+├── app/                     # Core application directory
+│   ├── controllers/         # Controllers for handling business logic
+│   │   ├── VehicleController.php
+│   │   ├── TripController.php
+│   │   └── PaymentController.php (if needed)
+│   ├── models/              # Models for database interaction
+│   │   ├── Vehicle.php
+│   │   ├── Trip.php
+│   │   └── Payment.php (if needed)
+│   ├── views/               # Views for displaying HTML
+│   │   ├── vehicles/        # Views related to vehicles
+│   │   │   ├── available.php
+│   │   │   └── benefits.php
+│   │   ├── trips/           # Views related to trips
+│   │   │   ├── daily_benefits.php
+│   │   │   └── profitable.php
+│   │   └── payments/        # Views related to payments (if needed)
+│   ├── helpers/             # Helper classes or functions (optional)
+│   └── config/              # Configuration files
+│       ├── database.php     # Database connection settings
+│       └── settings.php     # Application settings (e.g., salary percentage)
+├── vendor/                  # Composer dependencies (after `composer install`)
+├── .env                     # Environment variables (database credentials, etc.)
+├── composer.json            # Composer file for managing dependencies
+├── composer.lock            # Lock file for Composer
+└── README.md                # Project documentation
+
+Directory and File Descriptions
+public/
+
+This is the public-facing directory where your application begins.
+index.php is the entry point that initializes Flight and loads routes.
+app/controllers/
+
+Contains controllers that process requests and return appropriate responses.
+Example:
+VehicleController.php handles routes for vehicle-related logic, like listing available vehicles or calculating benefits.
+app/models/
+
+Contains models that interact with the database.
+Example:
+Vehicle.php fetches data about vehicles from the vehicles table.
+app/views/
+
+Contains views that render HTML for the browser.
+Organized into subdirectories (vehicles/, trips/) based on functionality.
+app/config/
+
+Contains configuration files.
+database.php: Sets up the database connection using PDO.
+settings.php: Stores global settings, such as salary percentages.
+vendor/
+
+Directory for Composer dependencies. It will be created after running composer install.
+.env
+
+Stores environment-specific variables like database credentials, which are loaded using a library like vlucas/phpdotenv.
+
+
+Lunch port 8000
+->php -S localhost:8000
