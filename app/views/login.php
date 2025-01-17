@@ -26,16 +26,8 @@
                         <h2 class="form-title">Sign in</h2>
                         <form action="/loging" method="POST" class="register-form" id="login-form">
                             <div class="form-group">
-                                <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" id="username" name="username" placeholder="Username" required/>
-                            </div>
-                            <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" id="email" name="email" placeholder="Email" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for=""><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" id="tel" name="tel" placeholder="phone number" required/>
                             </div>
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>

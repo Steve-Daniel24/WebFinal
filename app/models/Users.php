@@ -22,12 +22,12 @@ class Users {
         }
 
         public function getUserIdByEmail($email) {
-            $stmt = $this->db->prepare("SELECT id FROM  WHERE email = '$email'");
+            $stmt = $this->db->prepare("SELECT id FROM User  WHERE email = '$email'");
             $stmt->execute();
             return $stmt->fetchColumn(); // Return the user ID
         }
         public function getUserNameByEmail($email) {
-            $stmt = $this->db->prepare("SELECT nom FROM  WHERE email = '$email'");
+            $stmt = $this->db->prepare("SELECT nom FROM User  WHERE email = '$email'");
             $stmt->execute();
             return $stmt->fetchColumn(); // Return the user ID
         }

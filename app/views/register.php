@@ -25,6 +25,14 @@
                                 <input type="text" id="username" name="username" placeholder="Username" required/>
                             </div>
                             <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" id="email" name="email" placeholder="Email" required/>
+                            </div>
+                            <div class="form-group">
+                                <label ><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" id="tel" name="tel" placeholder="Phone number" required/>
+                            </div>
+                            <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" id="password" name="password" placeholder="Password" required/>
                             </div>

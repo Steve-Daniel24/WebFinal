@@ -17,7 +17,7 @@ Créer la page d'accueil (index.php) du frontoffice.
         - Vérifier la bonne gestion des filtres pour chaque critère (type, loyer, quartier).
 
 - Page d'inscription (Frontoffice)
-Créer la page d'inscription pour les clients (formulaire d'inscription).
+Créer la page d'inscription pour les clients (formulaire d'inscription). =>(ok finished)
     - Affichage
         - Ajouter les champs : email, nom, mot de passe, numéro de téléphone.
         - Ajouter des messages d'erreur pour chaque champ obligatoire manquant.

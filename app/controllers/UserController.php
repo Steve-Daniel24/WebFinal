@@ -23,7 +23,7 @@ class UserController {
             session_start();
             $_SESSION['email'] = $_POST['email']; 
             $_SESSION['username'] = $name;
-            Flight::render('home', ['username' => $_POST['username']]);
+            Flight::render('home', ['username' =>$_SESSION['username']]);
         }else{
             $error="invalid username or password";
             $data=['error'=>$error];
