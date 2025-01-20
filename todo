@@ -23,7 +23,7 @@ Créer la page d'inscription pour les clients (formulaire d'inscription). =>(ok 
         - Ajouter des messages d'erreur pour chaque champ obligatoire manquant.
         - Créer un bouton de soumission pour l'inscription.
     - Base
-        - Créer une table clients dans la base de données avec les colonnes nécessaires : email, nom, mot de passe, numéro de téléphone.
+        - Créer une table clients dans la base de données avec les colonnes nécessaires : email, nom, mot de passe, numéro de téléphone. (OK)
         - Ajouter une fonctionnalité pour valider l'email et la disponibilité du numéro de téléphone.
     - Fonction
         - Vérifier que tous les champs sont remplis avant de soumettre le formulaire.
