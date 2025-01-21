@@ -35,9 +35,9 @@ class UserController {
         Flight::render('register');
     }
 
-    public function deposit() {
-        Flight::render('deposit');
-    }
+    // public function deposit() {
+    //     Flight::render('deposit');
+    // }
 
     public function register() {
         // Test de connexion avant de continuer
