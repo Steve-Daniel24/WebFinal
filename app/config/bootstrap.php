@@ -9,11 +9,11 @@ if (!file_exists(__DIR__ . $ds . 'config.php')) {
     throw new Exception('Config file not found. Please create a config.php file in the app/config directory.');
 }
 
-use Dotenv\Dotenv;
+// use Dotenv\Dotenv;
 
-// Load environment variables from .env file.
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
-$dotenv->load();
+// // Load environment variables from .env file.
+// $dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
+// $dotenv->load();
 
 // Create the Flight application instance.
 $app = Flight::app();
