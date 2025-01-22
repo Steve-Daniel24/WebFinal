@@ -24,6 +24,12 @@ CREATE TABLE Habitation_Types (
     type_name VARCHAR(50) NOT NULL UNIQUE  -- e.g., house, studio, apartment
 );
 
+-- Table for Locations (Neighborhoods)
+CREATE TABLE Locations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    neighborhood_name VARCHAR(255) NOT NULL UNIQUE
+);
+
 -- Table for Properties (Habitations)
 CREATE TABLE Properties (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -35,6 +41,12 @@ CREATE TABLE Properties (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (type_id) REFERENCES Habitation_Types(id) ON DELETE RESTRICT,
     FOREIGN KEY (location_id) REFERENCES Locations(id) ON DELETE RESTRICT
+);
+
+-- Table for Status Availability
+CREATE TABLE Status_Availability (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    status_name VARCHAR(50) NOT NULL UNIQUE  -- E.g., available, reserved
 );
 
 -- Table for Photos of Properties
@@ -53,7 +65,7 @@ CREATE TABLE Bookings (
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     total_amount DECIMAL(10, 2) NOT NULL,
-    status_id INT NOT NULL, -- Foreign key to Status_Availability
+    status_id INT NOT NULL, -- foreign key to Status_Availability
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (property_id) REFERENCES Properties(id) ON DELETE CASCADE,
     FOREIGN KEY (client_id) REFERENCES Clients(id) ON DELETE CASCADE,
@@ -65,15 +77,9 @@ CREATE TABLE Availability (
     id INT AUTO_INCREMENT PRIMARY KEY,
     property_id INT NOT NULL,
     date DATE NOT NULL,
-    status_id INT NOT NULL, -- Foreign key to Status_Availability
+    status_id INT NOT NULL, -- foreign key to Status_Availability
     FOREIGN KEY (property_id) REFERENCES Properties(id) ON DELETE CASCADE,
     FOREIGN KEY (status_id) REFERENCES Status_Availability(id) ON DELETE RESTRICT
-);
-
--- Table for Status Availability
-CREATE TABLE Status_Availability (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    status_name VARCHAR(50) NOT NULL UNIQUE  -- E.g., available, reserved
 );
 
 -- Table for Favorites
@@ -84,12 +90,6 @@ CREATE TABLE Favorites (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (client_id) REFERENCES Clients(id) ON DELETE CASCADE,
     FOREIGN KEY (property_id) REFERENCES Properties(id) ON DELETE CASCADE
-);
-
--- Table for Locations (Neighborhoods)
-CREATE TABLE Locations (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    neighborhood_name VARCHAR(255) NOT NULL UNIQUE
 );
 
 -- Table for Payment Methods
