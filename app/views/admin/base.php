@@ -10,9 +10,10 @@
 
     <?php include 'sidebar.php'; ?>
 
+    <!-- ITO ILAY MIOVA -->
   <main id="main" class="main">
     <?= $content ?>
-  </main><!-- End #main -->
+  </main>
 
   <?php include 'footer.php'; ?>
 
