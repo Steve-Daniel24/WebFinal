@@ -4,34 +4,32 @@
       <?php include 'head.php'; ?>
     </head>
 
-    <body>
-        <?php include 'header.php'; ?>
+<body class="index-page">
+    <?php include 'header.php'; ?>
 
-        <!-- MAIN SECTION : ITO ILAY MIOVA -->
+        <!-- ITO ILAY MIOVA -->
         <main class="main">
             <?= $content ?>
         </main>
 
-        <?php include 'footer.php'; ?>
+  <?php include 'footer.php'; ?>
 
-        <!-- Scroll Top -->
-        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-        <!-- Preloader -->
-        <div id="preloader"></div>
-        
-        <!-- Vendor JS Files -->
-        <script src="assets-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets-pages/vendor/php-email-form/validate.js"></script>
-        <script src="assets-pages/vendor/aos/aos.js"></script>
-        <script src="assets-pages/vendor/glightbox/js/glightbox.min.js"></script>
-        <script src="assets-pages/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-        <script src="assets-pages/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-        <script src="assets-pages/vendor/purecounter/purecounter_vanilla.js"></script>
-        <script src="assets-pages/vendor/waypoints/noframework.waypoints.js"></script>
-        <script src="assets-pages/vendor/swiper/swiper-bundle.min.js"></script>
-        
-        <!-- Main JS File -->
-        <script src="assets-pages/js/main.js"></script>
-    </body>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
