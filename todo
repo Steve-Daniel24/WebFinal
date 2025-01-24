@@ -4,7 +4,6 @@ Créer la page d'accueil (index.php) du frontoffice.
         - Ajouter une barre de recherche visible sur la page.
         - Afficher une liste des habitations disponibles.
         - Implémenter des filtres pour trier les habitations par type, loyer, quartier, etc.
-        - Respecter les maquettes de la page d'accueil (couleurs, polices, disposition).
     - Base
         - Créer une fonction pour récupérer les habitations disponibles depuis la base de données.
         - Configurer une table pour stocker les informations de recherche et les filtres.
@@ -16,26 +15,24 @@ Créer la page d'accueil (index.php) du frontoffice.
         - Intégrer la recherche avec les tables de la base de données (habitaciones, clients).
         - Vérifier la bonne gestion des filtres pour chaque critère (type, loyer, quartier).
 
-- Page d'inscription (Frontoffice)
-Créer la page d'inscription pour les clients (formulaire d'inscription). =>(ok finished)
+- Page d'inscription (Frontoffice) =>(ok finished)
+Créer la page d'inscription pour les clients (formulaire d'inscription). 
     - Affichage
         - Ajouter les champs : email, nom, mot de passe, numéro de téléphone.
         - Ajouter des messages d'erreur pour chaque champ obligatoire manquant.
         - Créer un bouton de soumission pour l'inscription.
     - Base
-        - Créer une table clients dans la base de données avec les colonnes nécessaires : email, nom, mot de passe, numéro de téléphone. (OK)
-        - Ajouter une fonctionnalité pour valider l'email et la disponibilité du numéro de téléphone.
+        - Créer une table clients dans la base de données avec les colonnes nécessaires : email, nom, mot de passe, numéro de téléphone.
     - Fonction
         - Vérifier que tous les champs sont remplis avant de soumettre le formulaire.
-        - Vérifier la validité de l'email et du mot de passe (ex : mot de passe fort).
-        - Valider le numéro de téléphone et l'unicité de l'email.
+        - Valider l'unicité de l'email.
     - Integration
         - Intégrer le formulaire d'inscription avec la base de données (clients).
         - Vérifier que les données saisies sont correctement enregistrées dans la base de données.
         - Ajouter des redirections après l'inscription réussie vers la page de connexion.
 
-- Page de login (Frontoffice et Backoffice)
-Créer la page de connexion pour les administrateurs et clients. =>ok (finished)
+- Page de login (Frontoffice et Backoffice)  =>(ok finished)
+Créer la page de connexion pour les administrateurs et clients. 
     - Affichage
         - Créer les champs email et mot de passe.
         - Ajouter un bouton de connexion.
@@ -54,8 +51,13 @@ Créer la page de connexion pour les administrateurs et clients. =>ok (finished)
         - Intégrer l'authentification avec les tables clients (pour le frontoffice) et administrateurs (pour le backoffice).
         - Ajouter une gestion de session pour maintenir l'utilisateur connecté.
 
+<<<<<<< Updated upstream
 - Page de gestion des habitations (Backoffice)
 Créer la page de gestion des habitations (ajout, modification, suppression). ajout(ok)
+=======
+- Page de gestion des habitations (Backoffice)  =>(ok finished)
+Créer la page de gestion des habitations (ajout, modification, suppression).
+>>>>>>> Stashed changes
     - Affichage
         - Créer un tableau pour afficher les habitations existantes.(ok)
         - Ajouter des boutons pour ajouter, modifier et supprimer une habitation.
@@ -65,8 +67,8 @@ Créer la page de gestion des habitations (ajout, modification, suppression). aj
         - Ajouter une fonctionnalité pour uploader des photos.
         - Implémenter des requêtes pour ajouter, modifier et supprimer des habitations.
     - Fonction
-        - Implémenter des formulaires pour ajouter et modifier les habitations.
-        - Implémenter la suppression d'habitations via un bouton de suppression.
+        - Implémenter une formulaires pour ajouter des habitations.
+        - Implémenter la modification et la suppression d'habitations via un bouton de modification et de suppression.
     - Integration
         - Intégrer la gestion des habitations avec la base de données pour refléter les modifications effectuées.
         - Vérifier que les photos sont correctement uploadées et affichées sur la page.
