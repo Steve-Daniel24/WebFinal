@@ -1,15 +1,20 @@
 <?php
 use app\controllers\UserController;
+use app\controllers\HabitationController;
 use flight\net\Router;
 /** 
  * @var Router $router 
  * @var Engine $app
  */
 $UserController = new UserController();
+$HabitationController = new HabitationController();
 $router->get('/', [ $UserController, 'login' ]);
 $router->post('/loging', [ $UserController, 'log' ]);
 $router->post('/register', [ $UserController, 'register' ]);
 $router->get('/signup', [ $UserController, 'signup' ]);
+$router->get('/Admin', [ $HabitationController, 'Admin' ]);
+$router->post('/AddHabitation', [ $HabitationController, 'AddHabitation' ]);
+
 
 
 

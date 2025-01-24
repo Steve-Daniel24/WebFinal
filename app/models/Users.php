@@ -32,7 +32,29 @@ class Users {
             return $stmt->fetchColumn(); // Return the user ID
         }
 
-        
+         // Admins
+    public function insertAdmin($name, $password) {
+        $stmt = $this->db->prepare("INSERT INTO Admins (name, password) VALUES ('$name', '$password')");
+        $stmt->execute();
+        return $this->db->lastInsertId();
+    }
+
+    public function getAdmins() {
+        $stmt = $this->db->query("SELECT * FROM Admins");
+        return $stmt->fetchAll();
+    }
+
+    public function updateAdmin($id, $name, $password) {
+        $stmt = $this->db->prepare("UPDATE Admins SET name = '$name', password = '$password' WHERE id = $id");
+        $stmt->execute();
+        return $stmt->rowCount();
+    }
+
+    public function deleteAdmin($id) {
+        $stmt = $this->db->prepare("DELETE FROM Admins WHERE id = $id");
+        $stmt->execute();
+        return $stmt->rowCount();
+    }
            
 
 
