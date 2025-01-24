@@ -51,13 +51,8 @@ Créer la page de connexion pour les administrateurs et clients.
         - Intégrer l'authentification avec les tables clients (pour le frontoffice) et administrateurs (pour le backoffice).
         - Ajouter une gestion de session pour maintenir l'utilisateur connecté.
 
-<<<<<<< Updated upstream
-- Page de gestion des habitations (Backoffice)
-Créer la page de gestion des habitations (ajout, modification, suppression). ajout(ok)
-=======
 - Page de gestion des habitations (Backoffice)  =>(ok finished)
 Créer la page de gestion des habitations (ajout, modification, suppression).
->>>>>>> Stashed changes
     - Affichage
         - Créer un tableau pour afficher les habitations existantes.(ok)
         - Ajouter des boutons pour ajouter, modifier et supprimer une habitation.
@@ -163,7 +158,7 @@ Créer la page de déconnexion pour permettre à l'utilisateur de se déconnecte
     - Integration
         - Intégrer la fonctionnalité de déconnexion avec le système de gestion de sessions.
 
-- Page d'erreur 404
+- Page d'erreur 404   =>(ok finished)
 Créer la page d'erreur 404 (page non trouvée).
     - Affichage
         - Afficher un message d'erreur clair indiquant que la page demandée n'existe pas.
