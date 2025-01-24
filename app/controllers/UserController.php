@@ -12,7 +12,7 @@ class UserController {
 
     public function login() {
       //  $benefits = Trip::getDailyBenefits();
-        Flight::render('login');
+        Flight::render('clients/login');
        
     }
     public function log() {
@@ -23,7 +23,7 @@ class UserController {
             session_start();
             $_SESSION['email'] = $_POST['email']; 
             $_SESSION['username'] = $name;
-            Flight::render('home', ['username' =>$_SESSION['username']]);
+            Flight::render('clients/home', ['username' =>$_SESSION['username']]);
         }else{
             $error="invalid username or password";
             $data=['error'=>$error];
@@ -32,7 +32,7 @@ class UserController {
     }
 
     public function signup() {
-        Flight::render('register');
+        Flight::render('clients/register');
     }
 
   

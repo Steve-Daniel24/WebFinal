@@ -55,9 +55,9 @@ Créer la page de connexion pour les administrateurs et clients. =>ok (finished)
         - Ajouter une gestion de session pour maintenir l'utilisateur connecté.
 
 - Page de gestion des habitations (Backoffice)
-Créer la page de gestion des habitations (ajout, modification, suppression).
+Créer la page de gestion des habitations (ajout, modification, suppression). ajout(ok)
     - Affichage
-        - Créer un tableau pour afficher les habitations existantes.
+        - Créer un tableau pour afficher les habitations existantes.(ok)
         - Ajouter des boutons pour ajouter, modifier et supprimer une habitation.
         - Afficher un message de confirmation après chaque modification ou suppression.
     - Base
