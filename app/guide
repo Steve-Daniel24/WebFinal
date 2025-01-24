@@ -1,45 +1,50 @@
 project/
-├── public/                  # Publicly accessible directory (entry point)
-│   ├── assets/              # Pour gérer les fichiers statiques
-│   │   ├── css/
-│   │   │   ├── style.css
-│   │   ├── js/
-│   │   │   ├── app.js
-│   │   │   └── tasks.js
-│   │   ├── images/
-│   │   │   ├── example.png
-│   │   └── fonts/
-│   ├── index.php            # Main application entry point
-│   └── .htaccess            # Apache configuration for routing (if using Apache)
+├── app/                     # Core application directory
+│   ├── config/              # Configuration files
+│   │   ├── bootstrap.php
+│   │   ├── config.php
+│   │   ├── routes.php
+│   │   └── services.php
+│   ├── controllers/         # Controllers for handling business logic
+│   │   └── UserController.php
+│   ├── models/              # Models for database interaction
+│   │   ├── Habitations.php
+│   │   ├── Reservation.php
+│   │   └── Users.php
+│   └── views/               # Views for displaying HTML
+│       ├── admin/
+│       │   ├── base.php
+│       │   ├── footer.php
+│       │   ├── head.php
+│       │   ├── header.php
+│       │   └── sidebar.php
+│       └── clients/
+│           ├── base.php
+│           ├── footer.php
+│           ├── head.php
+│           ├── header.php
+│           ├── home.php
+│           ├── login.php
+│           ├── register.php
+│           └── swipe.php
 ├── database/                # Base de donnees
 │   ├── data.sql
-│   ├── schema.sql
-├── app/                     # Core application directory
-│   ├── controllers/         # Controllers for handling business logic
-│   │   ├── VehicleController.php
-│   │   ├── TripController.php
-│   │   └── PaymentController.php (if needed)
-│   ├── models/              # Models for database interaction
-│   │   ├── Vehicle.php
-│   │   ├── Trip.php
-│   │   └── Payment.php (if needed)
-│   ├── views/               # Views for displaying HTML
-│   │   ├── vehicles/        # Views related to vehicles
-│   │   │   ├── available.php
-│   │   │   └── benefits.php
-│   │   ├── trips/           # Views related to trips
-│   │   │   ├── daily_benefits.php
-│   │   │   └── profitable.php
-│   │   └── payments/        # Views related to payments (if needed)
-│   ├── helpers/             # Helper classes or functions (optional)
-│   └── config/              # Configuration files
-│       ├── database.php     # Database connection settings
-│       └── settings.php     # Application settings (e.g., salary percentage)
-├── vendor/                  # Composer dependencies (after `composer install`)
+│   ├── drop.sql
+│   └── schema.sql
+├── public/                  # Publicly accessible directory (entry point)
+│   ├── .htaccess            # Apache configuration for routing (if using Apache)
+│   ├── index.php            # Main application entry point
+└── vendor/                  # Composer dependencies (after `composer install`)
 ├── .env                     # Environment variables (database credentials, etc.)
 ├── composer.json            # Composer file for managing dependencies
 ├── composer.lock            # Lock file for Composer
 └── README.md                # Project documentation
+└── todo                     # Todo list
+
+
+
+
+
 
 Directory and File Descriptions
 public/
