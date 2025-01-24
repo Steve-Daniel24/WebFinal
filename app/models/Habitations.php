@@ -205,6 +205,13 @@ class Habitations {
             $stmt->execute();
             return $stmt->fetchAll();
         }
+
+        public function getAllPhoto() {
+            $stmt = $this->db->prepare("SELECT * FROM Photos");
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }
+
         
             // Favorites
     public function insertFavorite($client_id, $property_id) {

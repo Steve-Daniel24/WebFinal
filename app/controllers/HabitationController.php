@@ -13,8 +13,9 @@ class HabitationController {
     public function Admin() {
         $habitations = new Habitations(Flight::db());
         //  $benefits = Trip::getDailyBenefits();
+        $photo= $habitations->getAllPhoto();
         $properties = $habitations->getAllProperties();
-          Flight::render('Admin',['properties' => $properties]);
+          Flight::render('admin/properties',['properties' => $properties,'photo' => $photo]);
          
       }
    
