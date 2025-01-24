@@ -8,4 +8,5 @@
   <i class="bi bi-list toggle-sidebar-btn"></i>
 </div>
 
+<?php include 'nav.php'; ?>
 </header>
