@@ -150,7 +150,6 @@ Créer la page de gestion des réservations (affichage des réservations en cour
 Créer la page de déconnexion pour permettre à l'utilisateur de se déconnecter.
     - Affichage
         - Ajouter un bouton de déconnexion dans la barre de navigation.
-        - Afficher un message de confirmation après la déconnexion.
     - Base
         - Créer une fonction pour détruire la session de l'utilisateur.
     - Fonction
