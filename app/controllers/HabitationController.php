@@ -15,7 +15,7 @@ class HabitationController {
         //  $benefits = Trip::getDailyBenefits();
         $photo= $habitations->getAllPhoto();
         $properties = $habitations->getAllProperties();
-          Flight::render('Admin',['properties' => $properties,'photo' => $photo]);
+          Flight::render('admin/properties',['properties' => $properties,'photo' => $photo]);
          
       }
    

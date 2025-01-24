@@ -1,6 +1,12 @@
 <?php $title = "Admin - Properties"; ?>
 
-<?php ob_start(); ?>
+<?php ob_start();?>
+<?php 
+$groupedPhotos = [];
+foreach ($photo as $photos) {
+    $groupedPhotos[$photos['property_id']][] = $photos;
+}
+ ?>
     <h1>Admin - Manage Properties</h1>
 
     <h2>Insert Property</h2>
@@ -64,6 +70,15 @@
                             <td><?php echo htmlspecialchars($property['daily_rent']); ?></td>
                             <td><?php echo htmlspecialchars($property['location_id']); ?></td>
                             <td><?php echo htmlspecialchars($property['description']); ?></td>
+                            <td>
+                            <?php if (isset($groupedPhotos[$property['id']])): ?>
+                <?php foreach ($groupedPhotos[$property['id']] as $photo): ?>
+                    <img src="../../<?= htmlspecialchars($photo['photo_url']) ?>" alt="" width="100" height="100">
+                <?php endforeach; ?>
+            <?php else: ?>
+                No photos available
+            <?php endif; ?>
+        </td>
                             <td>
                                 <form action="admin.php" method="POST" style="display:inline;">
                                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($property['id']); ?>">
