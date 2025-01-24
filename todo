@@ -68,7 +68,7 @@ Créer la page de gestion des habitations (ajout, modification, suppression).
         - Intégrer la gestion des habitations avec la base de données pour refléter les modifications effectuées.
         - Vérifier que les photos sont correctement uploadées et affichées sur la page.
 
-- Page des détails de l'habitation (Frontoffice)
+- Page des détails de l'habitation (Frontoffice)  =>(ok finished)
 Créer la page des détails de l'habitation.
     - Affichage
         - Afficher toutes les informations détaillées de l'habitation : type, nombre de chambres, loyer, description, photos, quartier.
@@ -146,10 +146,10 @@ Créer la page de gestion des réservations (affichage des réservations en cour
         - Vérifier que toutes les actions effectuées dans la gestion des réservations sont bien intégrées à la base de données.
         - Mettre à jour l'interface en temps réel avec les changements effectués.
 
-- Page de déconnexion (Frontoffice et Backoffice)
+- Page de déconnexion (Frontoffice et Backoffice)=>(ok finished)
 Créer la page de déconnexion pour permettre à l'utilisateur de se déconnecter.
     - Affichage
-        - Ajouter un bouton de déconnexion dans la barre de navigation.
+        - Ajouter un bouton de déconnexion dans la barre de navigation. 
     - Base
         - Créer une fonction pour détruire la session de l'utilisateur.
     - Fonction
