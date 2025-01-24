@@ -1,5 +1,6 @@
 <?php $title = "Home"; ?>
 
+<?php ob_start(); ?>
 <!-- Portfolio Section -->
 <section id="portfolio" class="portfolio section">
 
@@ -168,3 +169,8 @@
 </div>
 
 </section><!-- /Portfolio Section -->
+
+
+<?php $content = ob_get_clean(); ?>
+
+<?php require('base.php') ?>
