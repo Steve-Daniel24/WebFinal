@@ -18,6 +18,10 @@ class HabitationController {
           Flight::render('admin/properties',['properties' => $properties,'photo' => $photo]);
          
       }
+      public function redirecthome(){
+        
+        Flight::render('home');
+      }
    
 
     // insertion des prprieter
