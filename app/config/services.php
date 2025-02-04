@@ -31,14 +31,26 @@ $app->register('db', $pdoClass, [$dsn, $config['database']['user'] ?? null, $con
 // $app->register('redis', Redis::class, [ $config['redis']['host'], $config['redis']['port'] ]);
 
 
-Flight::map('AnimalModel', function () {
+Flight::map('AnimalModel', function() {
     return new AnimalModel(Flight::db());
 });
 
+<<<<<<< HEAD
 Flight::map('AlimentationlModel', function () {
     return new AlimentationModel(Flight::db());
 });
 
 Flight::map('User', function () {
+=======
+Flight::map('AlimentationModel', function() {
+    return new AlimentationModel(Flight::db());
+});
+
+Flight::map('User', function() {
+>>>>>>> ecf1f08d966abcb725daab86b8fc862c0cf892b2
     return new User(Flight::db());
 });
+
+// Pour le debugger
+$pdoClass = class_exists('Tracy\Debugger') ? 'PdoQueryCapture' : 'PDO';
+$app->register('db', $pdoClass, [$config['database']['user'], $config['database']['password'] ?? null]);

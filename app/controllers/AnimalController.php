@@ -140,6 +140,17 @@ class AnimalController
 
         $animalModel = Flight::AnimalModel();
         $animalModel->createAnimalShop($type_id, $poids_actuel, $poids_min_vente, $poids_max, $prix_vente_kg, $jours_sans_manger, $perte_poids_par_jour);
+        Flight::render("Animal_shop");
+    }
+
+    public function animal_shop(){
+        $animalModel = Flight::AnimalModel();
+        $animals = $animalModel->getAnimalShops();
+        Flight::render("Animal_shop", ['animals' => $animals]);
+}
+
+    public function Animalshop_delete($id){
+        Flight::AnimalModel()->deleteAnimalShop($id);
         Flight::redirect("Animal_shop.php");
     }
 }
