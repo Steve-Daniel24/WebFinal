@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Add Animal to Shop</h1>
-    <form action="add_animal_shop.php" method="post">
+    <form action="add_animal_shop" method="post">
         <label for="type_id">Type ID:</label>
         <input type="number" id="type_id" name="type_id" required><br>
 

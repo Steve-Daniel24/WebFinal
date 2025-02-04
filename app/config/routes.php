@@ -18,6 +18,7 @@ use app\controllers\AnimalController;
  
  Flight::route('GET /EtatElevage', [$animalController, 'GainPoidsAnimale']);
  Flight::route('POST /Animals/gainPoids/', [$animalController, 'calculerGainPoidsTous']);
- 
+ Flight::route('GET /Animal_shop', [$animalController, 'animal_shop']);
+ Flight::route('POST /add_animal_shop', [$animalController, 'animalshop_insert']);
 
 ?>

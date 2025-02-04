@@ -131,4 +131,13 @@ class AnimalController
         $animalModel->createAnimalShop($type_id, $poids_actuel, $poids_min_vente, $poids_max, $prix_vente_kg, $jours_sans_manger, $perte_poids_par_jour);
         Flight::redirect("Animal_shop.php");
     }
+
+    public function animal_shop(){
+        Flight::render("Animal_shop");
+}
+
+    public function Animalshop_delete($id){
+        Flight::AnimalModel()->deleteAnimalShop($id);
+        Flight::redirect("Animal_shop.php");
+    }
 }
