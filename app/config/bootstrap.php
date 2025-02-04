@@ -5,7 +5,7 @@ $autoloadPath = __DIR__ . $ds . '..' . $ds . '..' . $ds . 'vendor' . $ds . 'auto
 require($autoloadPath);
 
 // Ensure the config file exists before proceeding.
-if (!file_exists(__DIR__ . $ds . 'config.php')) {
+if (!file_exists(__DIR__ . '/config.php')) {
     throw new Exception('Config file not found. Please create a config.php file in the app/config directory.');
 }
 
@@ -15,8 +15,11 @@ if (!file_exists(__DIR__ . $ds . 'config.php')) {
 // $dotenv = Dotenv::createImmutable(__DIR__ . '/../../');
 // $dotenv->load();
 
+// Démarrer la session
+session_start();
+
 // Create the Flight application instance.
-$app = Flight::app();
+$app = new \Flight\Engine();
 
 // Load configuration file.
 $config = require('config.php');

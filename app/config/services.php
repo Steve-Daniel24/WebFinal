@@ -30,12 +30,18 @@ $app->register('db', $pdoClass, [$dsn, $config['database']['user'] ?? null, $con
 // $app->register('redis', Redis::class, [ $config['redis']['host'], $config['redis']['port'] ]);
 
 
-Flight::map('AnimalModel', function () {
+Flight::map('AnimalModel', function() {
     return new AnimalModel(Flight::db());
 });
-Flight::map('AlimentationlModel', function () {
+
+Flight::map('AlimentationModel', function() {
     return new AlimentationModel(Flight::db());
 });
-Flight::map('User', function () {
+
+Flight::map('User', function() {
     return new User(Flight::db());
 });
+
+// Pour le debugger
+$pdoClass = class_exists('Tracy\Debugger') ? 'PdoQueryCapture' : 'PDO';
+$app->register('db', $pdoClass, [$config['database']['user'], $config['database']['password'] ?? null]);
