@@ -1,40 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Animal to Shop</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Buy Animals</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
-<body>
-    <h1>Add Animal to Shop</h1>
-    <form action="add_animal_shop" method="post">
-        <label for="type_id">Type ID:</label>
-        <input type="number" id="type_id" name="type_id" required><br>
-
-        <label for="poids_actuel">Current Weight:</label>
-        <input type="number" step="0.01" id="poids_actuel" name="poids_actuel" required><br>
-
-        <label for="poids_min_vente">Min Sale Weight:</label>
-        <input type="number" step="0.01" id="poids_min_vente" name="poids_min_vente" required><br>
-
-        <label for="poids_max">Max Weight:</label>
-        <input type="number" step="0.01" id="poids_max" name="poids_max" required><br>
-
-        <label for="prix_vente_kg">Sale Price per Kg:</label>
-        <input type="number" step="0.01" id="prix_vente_kg" name="prix_vente_kg" required><br>
-
-        <label for="jours_sans_manger">Days Without Food:</label>
-        <input type="number" id="jours_sans_manger" name="jours_sans_manger" required><br>
-
-        <label for="perte_poids_par_jour">Weight Loss per Day:</label>
-        <input type="number" step="0.01" id="perte_poids_par_jour" name="perte_poids_par_jour" required><br>
-
-        <input type="submit" value="Add Animal">
-    </form>
-
-    <h1>Animal Shop</h1>
-    <table border="1">
+<h1>Buy Animals</h1>
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -60,14 +46,15 @@
                     <td><?php echo htmlspecialchars($animal['jours_sans_manger']); ?></td>
                     <td><?php echo htmlspecialchars($animal['perte_poids_par_jour']); ?></td>
                     <td>
-                    <form action="Animalshop_delete" method="post" style="display:inline;">
+                    <form action="buy_animal" method="post" style="display:inline;">
                             <input type="hidden" name="id" value="<?php echo htmlspecialchars($animal['id']); ?>">
-                            <button type="submit">Delete</button>
+                            <button type="submit">Buy</button>
                         </form>
                     </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-</body>
+    </body>
 </html>
+             

@@ -229,7 +229,6 @@ class AnimalModel
     {
         $sql = "SELECT * FROM animal_shop WHERE id = $id";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(':id', $id);
         $stmt->execute();
         return $stmt->fetch();
     }
@@ -250,4 +249,5 @@ class AnimalModel
         $stmt->execute();
         return $stmt->rowCount();
     }
+   
 }

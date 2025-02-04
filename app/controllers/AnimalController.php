@@ -129,7 +129,7 @@ class AnimalController
 
         $animalModel = Flight::AnimalModel();
         $animalModel->createAnimalShop($type_id, $poids_actuel, $poids_min_vente, $poids_max, $prix_vente_kg, $jours_sans_manger, $perte_poids_par_jour);
-        Flight::render("Animal_shop");
+        Flight::redirect("Admin_Animal");
     }
 
     public function animal_shop(){
@@ -138,8 +138,33 @@ class AnimalController
         Flight::render("Animal_shop", ['animals' => $animals]);
 }
 
-    public function Animalshop_delete($id){
-        Flight::AnimalModel()->deleteAnimalShop($id);
-        Flight::redirect("Animal_shop.php");
+    public function Animalshop_delete(){
+        Flight::AnimalModel()->deleteAnimalShop($_POST['id']);
+        Flight::redirect("Admin_Animal");
+    }
+
+    public function buy_animals_redirect(){
+        $animalModel = Flight::AnimalModel();
+        $animals = $animalModel->getAnimalShops();
+        Flight::render("buy_animals", ['animals' => $animals]);
+    }
+    public function buy_animal(){
+        $id = $_POST['id'];
+        $animalModel = Flight::AnimalModel();
+        $animal = $animalModel->getAnimalShopById($id);
+        if ($animal) {
+            $animalModel->createAnimal(
+                1,
+                $animal['type_id'],
+                $animal['poids_actuel'],
+                $animal['poids_min_vente'],
+                $animal['poids_max'],
+                $animal['prix_vente_kg'],
+                $animal['jours_sans_manger'],
+                $animal['perte_poids_par_jour']
+            );
+        }
+    
+        Flight::redirect('Animalshop_buy');
     }
 }

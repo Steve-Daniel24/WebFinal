@@ -38,4 +38,5 @@ class AlimentationModel
     $stmt = $this->pdo->prepare($query);
     return $stmt->execute([$quantite, $id]);
   }
+  
 }
