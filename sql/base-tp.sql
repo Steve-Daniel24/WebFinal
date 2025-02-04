@@ -97,3 +97,12 @@ CREATE TABLE historique_animal_alimentation (
     FOREIGN KEY (animal_id) REFERENCES animal(id) ON DELETE CASCADE,
     FOREIGN KEY (alimentation_id) REFERENCES alimentation(id) ON DELETE CASCADE
 );
+
+CREATE TABLE stock_aliments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    alimentation_id INT NOT NULL,
+    quantite_stock INT NOT NULL DEFAULT 0,
+    FOREIGN KEY (alimentation_id) REFERENCES alimentation(id) ON DELETE CASCADE
+);
+
+ALTER TABLE animal ADD COLUMN etat ENUM('Vivant', 'Malade', 'Mort') DEFAULT 'Vivant';

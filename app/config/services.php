@@ -7,6 +7,7 @@ use Tracy\Debugger;
 use app\models\AnimalModel;
 use app\models\AlimentationModel;
 use app\models\User;
+
 /** 
  * @var array $config This comes from the returned array at the bottom of the config.php file
  * @var Engine $app
@@ -33,9 +34,11 @@ $app->register('db', $pdoClass, [$dsn, $config['database']['user'] ?? null, $con
 Flight::map('AnimalModel', function () {
     return new AnimalModel(Flight::db());
 });
+
 Flight::map('AlimentationlModel', function () {
     return new AlimentationModel(Flight::db());
 });
+
 Flight::map('User', function () {
     return new User(Flight::db());
 });

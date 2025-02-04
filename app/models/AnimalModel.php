@@ -250,4 +250,71 @@ class AnimalModel
         $stmt->execute();
         return $stmt->rowCount();
     }
+
+    public function simulerFerme($date)
+    {
+        $dateActuelle = date('Y-m-d');
+        $dateCible = $date; 
+        $joursAActiver = (strtotime($dateCible) - strtotime($dateActuelle)) / (60 * 60 * 24);
+
+        $sql = "SELECT id, type_id, poids_actuel, jours_sans_manger, perte_poids_par_jour, etat 
+                FROM animal WHERE etat != 'Mort'";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        $animaux = $stmt->fetchAll();
+
+        $sqlStock = "SELECT alimentation_id, quantite_stock FROM stock_aliments";
+        $stmtStock = $this->db->prepare($sqlStock);
+        $stmtStock->execute();
+        $stocks = [];
+        foreach ($stmtStock->fetchAll() as $stock) {
+            $stocks[$stock['alimentation_id']] = $stock['quantite_stock'];
+        }
+
+        for ($jour = 0; $jour < $joursAActiver; $jour++) {
+            foreach ($animaux as &$animal) {
+                $sqlAliments = "SELECT id, pourcentage_gain_poids FROM alimentation 
+                            WHERE type_id = (SELECT nom FROM type_animal WHERE id = :type_id)";
+                $stmtAliments = $this->db->prepare($sqlAliments);
+                $stmtAliments->execute(['type_id' => $animal['type_id']]);
+                $aliments = $stmtAliments->fetchAll();
+
+                $nourri = false;
+
+                foreach ($aliments as $aliment) {
+                    if (isset($stocks[$aliment['id']]) && $stocks[$aliment['id']] > 0) {
+                        $gain_poids = ($aliment['pourcentage_gain_poids'] / 100) * $animal['poids_actuel'];
+                        $animal['poids_actuel'] += $gain_poids;
+                        $stocks[$aliment['id']]--;
+                        $animal['jours_sans_manger'] = 0;
+                        $nourri = true;
+                        break;
+                    }
+                }
+
+                if (!$nourri) {
+                    $animal['poids_actuel'] += ($animal['perte_poids_par_jour'] / 100) * $animal['poids_actuel'];
+                    $animal['jours_sans_manger']++;
+
+                    $sqlJoursMax = "SELECT jours_sans_manger FROM animal WHERE id = :id";
+                    $stmtJoursMax = $this->db->prepare($sqlJoursMax);
+                    $stmtJoursMax->execute(['id' => $animal['id']]);
+                    $joursMax = $stmtJoursMax->fetchColumn();
+
+                    if ($animal['jours_sans_manger'] >= $joursMax) {
+                        $animal['etat'] = 'Mort';
+                    } else {
+                        $animal['etat'] = ($animal['jours_sans_manger'] > 3) ? 'Malade' : 'Vivant';
+                    }
+                } else {
+                    $animal['etat'] = 'Vivant';
+                }
+            }
+
+            return [
+                'animaux' => $animaux,
+                'aliments' => $stocks
+            ];
+        }
+    }
 }
