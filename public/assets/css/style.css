@@ -1,0 +1,47 @@
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('/assets/images/farm-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    color: white;
+}
+
+.feature-card {
+    transition: transform 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #198754;
+    margin-bottom: 1rem;
+}
+
+.stats-section {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #198754;
+}
+
+.cta-section {
+    background-color: #198754;
+    color: white;
+    padding: 4rem 0;
+} 

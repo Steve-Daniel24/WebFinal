@@ -1,3 +1,6 @@
 <?php
-$ds = DIRECTORY_SEPARATOR;
-require(__DIR__. $ds . 'app' . $ds . 'config' . $ds . 'bootstrap.php');
+
+require 'vendor/autoload.php';
+require 'app/config/bootstrap.php';
+
+Flight::start();

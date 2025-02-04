@@ -10,6 +10,10 @@
             envoyerFormulaire();
         });
 
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("date").valueAsDate = new Date(); // Préremplir avec la date du jour
+        });
+
         function envoyerFormulaire() {
             let date = document.getElementById("date").value;
 
@@ -25,12 +29,12 @@
             xhr.onload = function() {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     let data = JSON.parse(xhr.responseText);
+                    console.log("Données reçues:", data);
+
                     let tableBody = document.getElementById("resultatsTable");
                     tableBody.innerHTML = "";
 
-                    Object.keys(data.resultats).forEach(animal_id => {
-                        let animal = data.resultats[animal_id];
-
+                    Object.values(data.resultats).forEach(animal => {
                         let row = `<tr>
                     <td><strong>${animal.nom}</strong></td>
                     <td><strong>${animal.gain_poids_total.toFixed(2)} kg</strong></td>

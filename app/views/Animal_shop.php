@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Animal to Shop</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Boutique d'Animaux - FarmManager Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= Flight::get('flight.base_url') ?>public/assets/css/style.css">
 </head>
 <body>
     <h1>Add Animal to Shop</h1>
@@ -12,9 +13,34 @@
         <label for="type_id">Type ID:</label>
         <input type="number" id="type_id" name="type_id" required><br>
 
-        <label for="poids_actuel">Current Weight:</label>
-        <input type="number" step="0.01" id="poids_actuel" name="poids_actuel" required><br>
+    <div class="container py-5">
+        <h1 class="mb-4">Boutique d'Animaux</h1>
+        
+        <div class="row g-4">
+            <?php foreach ($animals as $animal): ?>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= htmlspecialchars($animal->nom) ?></h5>
+                            <p class="card-text">
+                                Espèce: <?= htmlspecialchars($animal->espece) ?><br>
+                                Poids: <?= htmlspecialchars($animal->poids) ?> kg<br>
+                                Taille: <?= htmlspecialchars($animal->taille) ?> cm
+                            </p>
+                            <p class="card-text">
+                                <strong>Prix: <?= number_format($animal->price, 2) ?> €</strong>
+                            </p>
+                            <form action="<?= Flight::get('flight.base_url') ?>shop/buy/<?= $animal->id ?>" method="POST">
+                                <button type="submit" class="btn btn-success">Acheter</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
 
+<<<<<<< Updated upstream
         <label for="poids_min_vente">Min Sale Weight:</label>
         <input type="number" step="0.01" id="poids_min_vente" name="poids_min_vente" required><br>
 
@@ -69,5 +95,9 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+=======
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+>>>>>>> Stashed changes
 </body>
 </html>

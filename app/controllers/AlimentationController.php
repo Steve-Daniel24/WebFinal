@@ -3,6 +3,8 @@
 require_once '../models/AlimentationModel.php';
 require_once '../config/database.php';
 
+use app\models\AlimentationModel;
+
 class AlimentationController
 {
   private $model;

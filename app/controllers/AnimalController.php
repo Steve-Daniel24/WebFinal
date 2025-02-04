@@ -104,7 +104,7 @@ class AnimalController
         Flight::json(['status' => 'Animal supprimé avec succès']);
         Flight::redirect("/animals");
     }
-    
+
     public function calculerGainPoidsTous()
     {
         $date = Flight::request()->data->date;
@@ -113,9 +113,20 @@ class AnimalController
             return;
         }
 
-        $resultats = Flight::AnimalModel()->calculerGainPoidsAnimal($date);
-        Flight::json(['resultats' => $resultats]);
+        $resultats = Flight::AnimalModel()->simulerFerme($date);
+
+        $reponse = [];
+        foreach ($resultats['animaux'] as $animal) {
+            $reponse[$animal['id']] = [
+                'nom' => 'Animal ' . $animal['id'],
+                'gain_poids_total' => $animal['poids_actuel'],
+                'aliments' => []
+            ];
+        }
+
+        Flight::json(['resultats' => $reponse]);
     }
+
 
     public function Animalshop_insert()
     {
