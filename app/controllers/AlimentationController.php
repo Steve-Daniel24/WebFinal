@@ -6,12 +6,7 @@ require_once '../config/database.php';
 class AlimentationController
 {
   private $model;
-
-  public function __construct()
-  {
-    global $pdo;
-    $this->model = new AlimentationModel($pdo);
-  }
+  public function __construct() {}
 
   public function listAlimentations()
   {
